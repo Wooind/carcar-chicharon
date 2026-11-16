@@ -1,0 +1,96 @@
+/**
+ * Sources as CITED IN THE STUDY (in-text citations, Kabanata 1, 2 and 4).
+ * Only authors/titles/pages that appear in the study text are listed.
+ * Full bibliographic entries must be copied from the study's
+ * "Mga Babasahing Tinutukoy" — see CONTENT_PLACEHOLDER_GUIDE.md.
+ */
+export type Ref = { author: string; work?: string; cited: string; where: string };
+
+export const referenceGroups: { title: string; items: Ref[] }[] = [
+  {
+    title: "Theoretical framework",
+    items: [
+      { author: "Vygotsky, Lev", work: "Socio-Cultural Theory", cited: "pp. 57, 86, 102", where: "Kabanata 1, 4" },
+      { author: "Rogers, Everett", work: "Diffusion of Innovations Theory", cited: "p. 5", where: "Kabanata 1, 4" },
+      { author: "Bourdieu, Pierre", work: "Cultural capital; habitus", cited: "p. 257", where: "Kabanata 2, 4" },
+      { author: "Sutton", cited: "p. 123", where: "Kabanata 1, 4" },
+      { author: "Mintz, Sidney", work: "Sweetness and Power", cited: "p. 89", where: "Kabanata 1, 4" },
+      { author: "Cole and Scribner", cited: "p. 45", where: "Kabanata 1" },
+      { author: "Zelizer", cited: "p. 12", where: "Kabanata 1" },
+      { author: "Moll et al.", cited: "p. 133", where: "Kabanata 1" },
+      { author: "Gonzalez et al.", cited: "p. 25", where: "Kabanata 1" },
+      { author: "Portes, Alejandro", work: "Economic Sociology: A Systematic Inquiry", cited: "pp. 15, 20–25", where: "Kabanata 1, 4" },
+      { author: "Gay et al.", cited: "p. 4", where: "Kabanata 1" },
+      { author: "Lantolf", cited: "p. 67", where: "Kabanata 1" },
+      { author: "Lantolf and Poehner", cited: "p. 23", where: "Kabanata 1" },
+      { author: "Ito", cited: "p. 112", where: "Kabanata 1" },
+      { author: "Gomez and Alipio", cited: "p. 89", where: "Kabanata 1" },
+      { author: "Wood et al.", cited: "p. 90", where: "Kabanata 1" },
+      { author: "Appadurai, Arjun", work: "Modernity at Large: Cultural Dimensions of Globalization", cited: "pp. 15, 147–149", where: "Kabanata 1, 4" },
+      { author: "Rosenstock", work: "Health Belief Model", cited: "—", where: "Kabanata 4" },
+    ],
+  },
+  {
+    title: "Chicharon, Carcar and local food",
+    items: [
+      { author: "Cosido et al.", work: "Carcar Chicharon: A Potential for Tourism Impact Studies", cited: "pp. 163–170", where: "Kabanata 2, 4" },
+      { author: "Inocian et al.", cited: "pp. 1–9, 165", where: "Kabanata 2, 4" },
+      { author: "Santos", cited: "p. 90", where: "Kabanata 2" },
+      { author: "Lopez", cited: "p. 48", where: "Kabanata 2" },
+      { author: "Tugano", cited: "p. 5", where: "Kabanata 2" },
+      { author: "Amtalao and Lartec", work: "Study on the Sillag Festival", cited: "p. 72", where: "Kabanata 2, 4" },
+      { author: "Fernandez, Doreen", work: "Tikim: Essays on Philippine Food and Culture", cited: "pp. 15–20, 122", where: "Kabanata 2, 4" },
+      { author: "Douglas, Mary and Baron Isherwood", work: "The World of Goods", cited: "pp. 35–42", where: "Kabanata 2, 4" },
+      { author: "Mercado", cited: "p. 475", where: "Kabanata 2" },
+      { author: "Iflazoğlu and Aksoy", cited: "p. 55", where: "Kabanata 2, 4" },
+      { author: "Ritiz et al.", cited: "pp. 61–62", where: "Kabanata 2" },
+      { author: "Medina and Ramos", work: "Filipino Food Habits", cited: "p. 95", where: "Kabanata 4" },
+      { author: "Fernan", work: "On gastronomic identity", cited: "p. 112", where: "Kabanata 4" },
+      { author: "Jover et al.", cited: "pp. 1–9", where: "Kabanata 2, 4" },
+      { author: "Ginsberg, Mark", work: "Gastro-tourism and Consumer Behavior", cited: "pp. 58–64", where: "Kabanata 2" },
+      { author: "Golloso-Gubat et al.", cited: "p. 8", where: "Kabanata 4" },
+      { author: "Panarina", cited: "pp. 65, 68", where: "Kabanata 4" },
+    ],
+  },
+  {
+    title: "Production, product development and food safety",
+    items: [
+      { author: "Reyes and Villanueva", work: "Innovations in Chicharon Production: Enhancing Quality and Sustainability", cited: "pp. 10–11, 20", where: "Kabanata 2, 4" },
+      { author: "Antonino et al. (2025)", work: "Product Development of Bamboo Shoot Chicharon", cited: "pp. 43–49", where: "Kabanata 2" },
+      { author: "Candelanza and Estrada", work: "Production of Pork Belly Chicharon", cited: "pp. 15–18", where: "Kabanata 2, 4" },
+      { author: "Canlas and Feliciano", work: "Industrial Establishment of a Standardized Process for Producing Crispy Fried Pork/Chicharon", cited: "pp. 76–80", where: "Kabanata 2, 4" },
+      { author: "Tioson et al.", work: "Development of a Nutritious Squash Chicharon", cited: "pp. 1–8", where: "Kabanata 2" },
+      { author: "Ascendens Asia Singapore – Bestlink College of the Philippines Journal of Multidisciplinary Research", work: "Squash chicharon study", cited: "pp. 1–5", where: "Kabanata 2" },
+      { author: "Magpale et al.", work: "Pako Chicharon", cited: "pp. 1–1321", where: "Kabanata 2, 4" },
+      { author: "Romero and Romero", work: "Papaya chicharon", cited: "pp. 1–45", where: "Kabanata 2, 4" },
+      { author: "Platon, Pambid and Lomboy", work: "Food safety practices of native-delicacy makers and vendors, Bayambang public market", cited: "pp. 1–10", where: "Kabanata 2, 4" },
+      { author: "Eggs Unlimited", cited: "p. 1", where: "Kabanata 4" },
+      { author: "Castillo et al.", cited: "p. 112", where: "Kabanata 2" },
+      { author: "Fetterly et al.", cited: "pp. 1–13", where: "Kabanata 2" },
+      { author: "Lave, Jean", work: "Learning and Everyday Life", cited: "pp. 1–10", where: "Kabanata 2" },
+    ],
+  },
+  {
+    title: "Language, commerce and digital culture",
+    items: [
+      { author: "Biber and Egbert", cited: "pp. 252, 258", where: "Kabanata 2" },
+      { author: "Blackwood", cited: "p. 112", where: "Kabanata 2" },
+      { author: "Mukundan and En", cited: "pp. C621–C622", where: "Kabanata 2" },
+      { author: "Lara and Villamor", cited: "p. 45", where: "Kabanata 2" },
+      { author: "Dimarucot and Redera", cited: "pp. 140–141", where: "Kabanata 2" },
+      { author: "Tayone", cited: "pp. 121–133", where: "Kabanata 2, 4" },
+      { author: "Porras et al. (EILER)", cited: "pp. 76–77", where: "Kabanata 2" },
+      { author: "Bagni et al.", cited: "pp. 2–7", where: "Kabanata 2" },
+      { author: "Soriano et al.", cited: "pp. 8–12", where: "Kabanata 2" },
+      { author: "Constantino, Renato et al.", cited: "pp. 2–3", where: "Kabanata 2" },
+      { author: "Akbar and Karim", cited: "pp. 94–97", where: "Kabanata 2" },
+      { author: "Japson et al.", cited: "pp. 4–13, 20", where: "Kabanata 2" },
+      { author: "Casimiro, Romualdo and Santiago", cited: "pp. 97–101", where: "Kabanata 2, 4" },
+      { author: "Department of Trade and Industry", work: "2023 Annual Report: Empowering MSMEs through OTOP Next Gen", cited: "pp. 1–55", where: "Kabanata 2, 4" },
+      { author: "Rellosa et al.", work: "Malikhaing Kamay: The Effects of Social Media Marketing on Sales Performance", cited: "pp. 1, 157", where: "Kabanata 2, 4" },
+      { author: "Reyes, Juan and Maria Cruz", work: "Digital Transformation of MSMEs in the Philippines", cited: "pp. 100–120", where: "Kabanata 2, 4" },
+      { author: "Schwab, Klaus", work: "The Fourth Industrial Revolution", cited: "pp. 20–50", where: "Kabanata 2" },
+      { author: "Etikan et al.", work: "Convenience sampling", cited: "p. 2", where: "Kabanata 3" },
+    ],
+  },
+];

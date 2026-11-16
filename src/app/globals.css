@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Carcar Chicharon — design tokens
+  Palette drawn from fried-pork-skin golds, heritage-house brick, narra wood and market paper.
+  Every text/background pairing below meets WCAG AA (4.5:1) at body size.
+*/
+@theme {
+  --color-paper: #f7f1e8; /* page background — warm market paper */
+  --color-surface: #fffbf5; /* cards */
+  --color-sand: #ece1cf; /* subtle fills, placeholders */
+  --color-line: #ddcdb5; /* borders */
+
+  --color-ink: #241811; /* primary text — cocoa */
+  --color-ink-soft: #5e4a3b; /* secondary text */
+  --color-ink-faint: #74604f; /* captions */
+
+  --color-crisp: #a35a17; /* primary — chicharon gold-brown */
+  --color-crisp-deep: #7f4410; /* primary hover */
+  --color-crisp-light: #e6b77c; /* primary on dark */
+  --color-brick: #8e3b23; /* secondary — heritage brick */
+  --color-narra: #2e4636; /* accent — narra wood green */
+
+  --color-night: #1f140d; /* dark sections */
+  --color-night-soft: #2c1e15;
+  --color-cream: #f4e9d8; /* text on dark */
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-crisp-light);
+  color: var(--color-night);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-crisp);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.dark-surface :focus-visible {
+  outline-color: var(--color-crisp-light);
+}
+
+/* Editorial display type */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+/* Intentional placeholder texture (diagonal hatch) */
+.placeholder-hatch {
+  background-color: var(--color-sand);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(36 24 17 / 0.045) 0 1px,
+    transparent 1px 14px
+  );
+}
+.dark-surface .placeholder-hatch {
+  background-color: var(--color-night-soft);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(244 233 216 / 0.06) 0 1px,
+    transparent 1px 14px
+  );
+}
+
+/* Animated underline for text links */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 250ms var(--ease-out-soft);
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Hide scrollbar for swipe rows while keeping them scrollable */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* ── Language switching (see src/lib/i18n.tsx) ───────────────────────── */
+[data-l] {
+  display: contents;
+}
+html:not([data-lang="ceb"]) [data-l="ceb"],
+html:not([data-lang="fil"]) [data-l="fil"],
+html[data-lang="ceb"] [data-l="en"],
+html[data-lang="fil"] [data-l="en"] {
+  display: none;
 }
